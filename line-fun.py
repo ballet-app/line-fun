@@ -7,7 +7,7 @@ st.title("Wykres funkcji liniowej: f(x) = ax + b")
 
 # Suwaki dla parametrów a i b
 a = st.slider('Wybierz współczynnik a:', -10.0, 10.0, 1.0, step=0.1)
-b = st.slider('Wybierz współczynnik b:', -20.0, 20.0, 0.0, step=0.1)
+b = st.slider('Wybierz współczynnik b:', -20.0, 20.0, 1.0, step=0.1)
 
 # Przygotowanie danych
 x = np.linspace(-10, 10, 400)
