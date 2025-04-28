@@ -21,7 +21,7 @@ fig.add_trace(go.Scatter(x=x, y=y, mode='lines', name=f'f(x) = {a}x + {b}'))
 fig.add_annotation(x=10.5, y=0, ax=10, ay=0,
                    xref='x', yref='y', axref='x', ayref='y',
                    showarrow=True, arrowhead=2, arrowsize=1.5, arrowwidth=2, arrowcolor="black")
-fig.add_annotation(x=0, y=50, ax=0, ay=49,
+fig.add_annotation(x=0, y=55, ax=0, ay=50,
                    xref='x', yref='y', axref='x', ayref='y',
                    showarrow=True, arrowhead=2, arrowsize=1.5, arrowwidth=2, arrowcolor="black")
 
@@ -42,7 +42,7 @@ fig.add_trace(go.Scatter(x=[0], y=[b],
 # Dodanie podpisów przy grotach osi
 fig.add_annotation(x=11, y=0, text="x", showarrow=False,
                    xanchor='left', yanchor='bottom', font=dict(size=14))
-fig.add_annotation(x=0, y=52, text="y", showarrow=False,
+fig.add_annotation(x=0, y=57, text="y", showarrow=False,
                    xanchor='left', yanchor='bottom', font=dict(size=14))
 
 # Aktualizacja wyglądu wykresu
@@ -52,7 +52,7 @@ fig.update_layout(title=f'Wykres funkcji: f(x) = {a}x + {b}',
                   template='plotly_white',
                   showlegend=True,
                   xaxis=dict(zeroline=False, showgrid=True, range=[-11, 11]),
-                  yaxis=dict(zeroline=False, showgrid=True, range=[-55, 55]),
+                  yaxis=dict(zeroline=False, showgrid=True, range=[-55, 60]),
                   margin=dict(l=40, r=40, t=80, b=40))
 
 # Wyświetlenie wykresu
