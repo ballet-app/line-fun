@@ -51,8 +51,14 @@ fig.update_layout(title=f'Wykres funkcji: f(x) = {a}x + {b}',
                   yaxis_title=None,
                   template='plotly_white',
                   showlegend=True,
-                  xaxis=dict(zeroline=False, showgrid=True, range=[-11, 11]),
-                  yaxis=dict(zeroline=False, showgrid=True, range=[-55, 60]),
+                  xaxis=dict(
+                      zeroline=False, showgrid=True, range=[-11, 11],
+                      ticks='inside', mirror=True, showline=True, linewidth=2, linecolor='black'
+                  ),
+                  yaxis=dict(
+                      zeroline=False, showgrid=True, range=[-55, 60],
+                      ticks='inside', mirror=True, showline=True, linewidth=2, linecolor='black'
+                  ),
                   margin=dict(l=40, r=40, t=80, b=40))
 
 # Wyświetlenie wykresu
