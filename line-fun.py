@@ -17,7 +17,15 @@ y = a * x + b
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=x, y=y, mode='lines', name=f'f(x) = {a}x + {b}'))
 
-# Dodanie osi x i y
+# Dodanie osi x i y z grotami strzałek
+fig.add_annotation(x=10.5, y=0, ax=10, ay=0,
+                   xref='x', yref='y', axref='x', ayref='y',
+                   showarrow=True, arrowhead=2, arrowsize=1.5, arrowwidth=2, arrowcolor="black")
+fig.add_annotation(x=0, y=50, ax=0, ay=49,
+                   xref='x', yref='y', axref='x', ayref='y',
+                   showarrow=True, arrowhead=2, arrowsize=1.5, arrowwidth=2, arrowcolor="black")
+
+# Dodanie osi bez grotów (podstawowe linie)
 fig.add_shape(type="line", x0=-10, x1=10, y0=0, y1=0,
               line=dict(color="black", width=2))  # Oś X
 fig.add_shape(type="line", x0=0, x1=0, y0=-50, y1=50,
@@ -31,14 +39,21 @@ fig.add_trace(go.Scatter(x=[0], y=[b],
                          mode='markers', marker=dict(color='blue', size=10),
                          name='Przecięcie z osią Y'))
 
+# Dodanie podpisów przy grotach osi
+fig.add_annotation(x=11, y=0, text="x", showarrow=False,
+                   xanchor='left', yanchor='bottom', font=dict(size=14))
+fig.add_annotation(x=0, y=52, text="y", showarrow=False,
+                   xanchor='left', yanchor='bottom', font=dict(size=14))
+
 # Aktualizacja wyglądu wykresu
 fig.update_layout(title=f'Wykres funkcji: f(x) = {a}x + {b}',
-                  xaxis_title='x',
-                  yaxis_title='f(x)',
+                  xaxis_title=None,
+                  yaxis_title=None,
                   template='plotly_white',
                   showlegend=True,
-                  xaxis=dict(zeroline=False, showgrid=True),
-                  yaxis=dict(zeroline=False, showgrid=True))
+                  xaxis=dict(zeroline=False, showgrid=True, range=[-11, 11]),
+                  yaxis=dict(zeroline=False, showgrid=True, range=[-55, 55]),
+                  margin=dict(l=40, r=40, t=80, b=40))
 
 # Wyświetlenie wykresu
 st.plotly_chart(fig)
